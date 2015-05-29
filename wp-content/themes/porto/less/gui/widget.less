@@ -1,0 +1,47 @@
+
+.widget {
+    .widgettitle,
+    .widget-title {
+        a:hover {
+            color: @skinColor;
+        }
+    }
+    li {
+        > a {
+            &:hover {
+                color: @skinColor;
+            }
+        }
+
+        &.current-cat,
+        &.current-cat-parent {
+            > a {
+                color: @skinColor;
+            }
+        }
+    }
+
+    .tagcloud {
+        a {
+            &:hover {
+                background-color: @skinColor;
+                border-color: @skinColor;
+            }
+        }
+    }
+}
+
+.widget_sidebar_menu .widget-title .toggle {
+    &:hover {
+        background-color: @skinColor;
+        border-color: @skinColor;
+    }
+}
+
+.sidebar {
+    .widget.widget_wysija {
+        .box-content {
+            border-top-color: @skinColor;
+        }
+    }
+}

@@ -1,0 +1,30 @@
+// Porto Config Scss Plugins File
+// Created at 2015-04-05 10:08:06
+
+//** Padding between columns. Gets divided in half for the left and right.
+$grid-gutter-width:         20px !default;
+
+// Large screen / wide desktop
+$container-large-desktop: (1170px) !default;
+$screen-lg: (1199px) !default;
+
+// Border radius
+    $border-radius-base:  4px !default;
+    $border-radius-large: 6px !default;
+    $border-radius-small: 3px !default;
+    $pager-border-radius: 15px !default;
+    $badge-border-radius: 10px !default;
+    $border-radius-normal: 5px;
+    $border-radius-base  : 4px;
+    $border-radius-thick:  7px;
+    $border-radius-strong: 8px;
+    $scroll-border-radius: 10px;
+    $scroll-border-radius-large: 12px;
+
+    //** Padding around the thumbnail image
+    $thumbnail-padding:      4px !default;
+    //** Thumbnail border color
+    $thumbnail-border:       #ddd !default;
+    $thumbnail-border-width: 1px;
+    $thumbnail-slide-width:  99.5%;
+

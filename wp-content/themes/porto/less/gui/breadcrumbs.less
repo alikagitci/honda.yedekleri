@@ -1,0 +1,44 @@
+.page-top {
+    background-color: @breadcrumbs_bg_color;
+    background-repeat: @breadcrumbs_bg_repeat;
+    background-size: @breadcrumbs_bg_size;
+    background-attachment: @breadcrumbs_bg_attachment;
+    background-position: @breadcrumbs_bg_position;
+    background-image: @breadcrumbs_bg_image;
+
+    > .container {
+        padding: @breadcrumbs_padding;
+    }
+
+    ul.breadcrumb {
+        > li {
+            color: @breadcrumbs_text_color;
+            a {
+                color: @breadcrumbs_link_color;
+            }
+        }
+    }
+    h2 {
+        color: @breadcrumbs_title_color;
+    }
+
+    .product-nav {
+        .product-link {
+            color: @breadcrumbs_link_color;
+        }
+        .product-popup {
+            &:before {
+                border-bottom-color: @skinColor;
+            }
+        }
+    }
+}
+
+#breadcrumbs-boxed {
+    &,
+    & .container {
+        .containerBoxedWidth();
+        .calcContainerWidth(@calc_breadcrumbs_width);
+    }
+}
+

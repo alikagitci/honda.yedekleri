@@ -1,0 +1,41 @@
+/* Buttons */
+
+button {
+    border: 1px solid #ccc;
+}
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active {
+    background-color: #CCC;
+    border-color: #CCC;
+}
+
+.btn-primary[disabled] {
+    border-color: #CCC !important;
+    background-color: #CCC;
+    background-image: none;
+}
+
+.btn-icon i {
+    @if $rtl == 1 {
+        margin-left: 10px;
+    } @else {
+        margin-right: 10px;
+    }
+}
+
+.btn-icon-right i {
+    @if $rtl == 1 {
+        margin-left: 0;
+        margin-right: 10px;
+    } @else {
+        margin-right: 0;
+        margin-left: 10px;
+    }
+}
+
+.btn-flat {
+    display: inline-block;
+}

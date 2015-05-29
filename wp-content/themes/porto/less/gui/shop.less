@@ -1,0 +1,223 @@
+
+// Woocommerce
+.quantity {
+    .qty,
+    .minus:hover,
+    .plus:hover {
+        color: @skinColor
+    }
+}
+.summary-before {
+    .ms-lightbox-btn {
+        background-color: @skinColor;
+
+        &:hover {
+            background-color: lighten(@skinColor, 5%);
+        }
+    }
+    .ms-nav-next,
+    .ms-nav-prev,
+    .ms-thumblist-fwd,
+    .ms-thumblist-bwd {
+        &:before {
+            color: @skinColor;
+        }
+    }
+}
+.product-summary-wrap {
+    .price {
+        color: @skinColor
+    }
+}
+.gridlist-toggle > a {
+    &:hover,
+    &:focus,
+    &.active {
+        background-color: @skinColor;
+        border-color: @skinColor;
+    }
+}
+
+.woocommerce-pagination {
+    a:hover,
+    a:focus,
+    span.current {
+        background-color: @skinColor;
+        border-color: @skinColor;
+    }
+}
+
+ul.products {
+    li.product {
+        h3 a {
+            &:hover,
+            &:focus {
+                color: @skinColor;
+            }
+        }
+    }
+}
+
+.add_to_cart_button,
+.add_to_cart_read_more {
+    &:hover,
+    &:focus,
+    ul.products li.product:hover &,
+    ul.list li.product & {
+        background-color: @skinColor;
+        border-color: @skinColor;
+    }
+
+    ul.products li.product .links-on-image .add-links & {
+        border-color: @skinColor;
+        color: @skinColor;
+
+        &:hover {
+            background-color: @skinColor;
+        }
+    }
+}
+
+.stock {
+    color: @skinColor;
+}
+
+.product-image .labels {
+    .viewcart {
+        color: @skinColor;
+        &:hover {
+            background-color: @skinColor;
+        }
+    }
+}
+#yith-wcwl-popup-message {
+    border-color: @skinColor;
+}
+
+.widget_price_filter .ui-slider-horizontal .ui-slider-range {
+    background-color: lighten(@skinColor, 5%);
+}
+.widget_price_filter .ui-slider .ui-slider-handle {
+    background-color: @skinColor;
+}
+.widget_product_categories,
+.widget_price_filter,
+.widget_layered_nav,
+.widget_layered_nav_filters {
+    .widget-title .toggle {
+        &:hover {
+            background-color: @skinColor;
+            border-color: @skinColor;
+        }
+    }
+    ul, ol {
+        li {
+            > a {
+                &:hover,
+                &:focus {
+                    color: @skinColor;
+                }
+            }
+
+            .toggle {
+                color: @skinColor;
+                &:hover {
+                    color: lighten(@skinColor, 5%);
+                }
+            }
+
+            &.current > a {
+                color: @skinColor;
+            }
+        }
+    }
+}
+
+.widget_layered_nav_filters ul li a {
+    &:before {
+        color: @skinColor;
+    }
+    &:hover {
+        &:before {
+            color: lighten(@skinColor, 5%);
+        }
+    }
+}
+
+.woocommerce,
+.woocommerce-page {
+    .widget_layered_nav {
+        ul.yith-wcan-label {
+            li {
+                a:hover,
+                &.chosen a {
+                    background-color: @skinColor;
+                    border-color: @skinColor;
+                }
+                &.chosen a:hover {
+                    background-color: lighten(@skinColor, 5%);
+                    border-color: lighten(@skinColor, 5%);
+                }
+            }
+        }
+    }
+}
+
+ul.cart_list,
+ul.product_list_widget {
+    li {
+        .product-details {
+            a:hover {
+                color: @skinColor;
+            }
+        }
+        a:hover {
+            color: @skinColor;
+        }
+    }
+}
+
+.widget_shopping_cart {
+    .total {
+        .amount {
+            color: @skinColor;
+        }
+    }
+}
+
+.woocommerce-cart {
+    .cart-form {
+        form {
+            border-color: @skinColor;
+        }
+    }
+}
+
+/* Cart */
+.shipping_calculator,
+.cart_totals {
+    h2 {
+        color: @skinColor;
+
+        a {
+            color: @skinColor;
+        }
+    }
+}
+
+.woocommerce #content table.shop_table.wishlist_table.cart a.remove {
+    color: @skinColor;
+
+    &:hover {
+        color: lighten(@skinColor, 5%);
+    }
+    &:active {
+        color: darken(@skinColor, 5%);
+    }
+}
+
+.yith-wcan-loading {
+    &:before {
+        border-color: @skinColor;
+    }
+}

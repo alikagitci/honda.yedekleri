@@ -1,0 +1,121 @@
+
+// Menu
+
+.mega-menu {
+    > li.menu-item {
+        &.active,
+        &:hover {
+            > a,
+            > h5 {
+                background: @skinColor;
+            }
+        }
+    }
+
+    .popup {
+        border-top-color: @skinColor;
+    }
+
+    .narrow {
+        .popup {
+            ul.sub-menu {
+                ul.sub-menu {
+                    border-top-color: @skinColor;
+                }
+            }
+        }
+    }
+}
+
+.sidebar-menu {
+    > li.menu-item {
+        &.active {
+            > a,
+            > h5 {
+                color: @skinColor;
+            }
+        }
+        &:hover {
+            background: @skinColor;
+
+            &,
+            + li.menu-item {
+                > a,
+                > h5 {
+                    border-top-color: @skinColor;
+                }
+            }
+        }
+        > .arrow {
+            &:before {
+                .sideMenuTopLevelBorder() when (@rtl = 1) {
+                    border-right-color: @skinColor;
+                }
+                .sideMenuTopLevelBorder() when not (@rtl = 1) {
+                    border-left-color: @skinColor;
+                }
+                .sideMenuTopLevelBorder;
+            }
+        }
+    }
+
+    .wide {
+        .popup {
+            .sideMenuWidePopupBorder() when (@rtl = 1) {
+                border-right-color: @skinColor;
+
+                .right-sidebar & {
+                    border-left-color: @skinColor;
+                }
+            }
+            .sideMenuWidePopupBorder() when not (@rtl = 1) {
+                border-left-color: @skinColor;
+
+                .right-sidebar & {
+                    border-right-color: @skinColor;
+                }
+            }
+            .sideMenuWidePopupBorder;
+        }
+    }
+
+    .narrow {
+        .popup {
+            ul.sub-menu {
+                background: @skinColor;
+            }
+
+            li.menu-item:hover {
+                > a,
+                > h5 {
+                    background: lighten(@skinColor, 5%);
+                }
+            }
+        }
+    }
+
+    .menu-custom-block {
+        a {
+            &:hover {
+                background-color: @skinColor;
+
+                &,
+                + a {
+                    border-top-color: @skinColor;
+                }
+            }
+        }
+    }
+}
+
+.mega-menu,
+.sidebar-menu,
+.accordion-menu,
+.menu-custom-block {
+    .tip {
+        background: @main_menu_tip_bg_color;
+        .tip-arrow {
+            color: @main_menu_tip_bg_color;
+        }
+    }
+}

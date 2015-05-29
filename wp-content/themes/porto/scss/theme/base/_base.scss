@@ -1,0 +1,32 @@
+body {
+	background-color: $light-bg;
+	color: $color-default;
+	font-family: $font-primary;
+	font-size: $body-font-size;
+	line-height: $body-line-height;
+	margin: 0;
+}
+
+.clear {
+    float: none;
+    clear: both;
+}
+
+.f-left {
+    float: left;
+}
+.f-right {
+    float: right;
+}
+.f-none {
+    float: none;
+}
+
+/* Responsive */
+@media (max-width: 479px) {
+
+	body {
+		font-size: 13px;
+	}
+
+}
