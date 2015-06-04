@@ -16,6 +16,10 @@ $options = array(
 	"timeout"         => 30,
 	"ssl_verify"      => false,
 );
+echo $dir = get_stylesheet_directory() . '/vc_new_templates_dir';
+exit;
+$newProduct=array();
+$product=array();
 
 $sqlQuery = "SELECT CONCAT(c.stokodu,'-', d.match_id) as stokKodu, c.stokodu, c.UreticiKodu, c.urun_marka, c.urun_adi as stokadi, c.olculer, c.motor_hacmi,
               c.kasa_tipi,c.kapi_sayisi, c.yil_baslangic, c.yil_bitis, c.arac_tip, c.seri, c.oem_no, a.sysmarka as aracmarka, b.sysaracmodel as aracmodel, e.sysurunanagrup as anagrup, f.sysurunaltgrup as altgrup,
@@ -30,7 +34,7 @@ $sqlQuery = "SELECT CONCAT(c.stokodu,'-', d.match_id) as stokKodu, c.stokodu, c.
                     ON (c.aracmarka=d.marka AND c.aracmodel=d.category AND d.match_id=b.id and   c.anagrup=g.anagrup AND c.altgrup=g.category And g.match_id=f.id )
                     JOIN matchAnagrup as e
                     ON e.id=f.urunanagrup_id
-                    WHERE c.aracmarka='Honda' and c.aracmodel='City' and c.status=0";
+                    WHERE c.aracmarka='Honda' and c.status=0";
 
 global $wpdb;
 $consumer_key    = 'ck_7c96beb6bf85652974fd8ab0d0a34e24'; // Add your own Consumer Key here
@@ -63,144 +67,135 @@ $client = new WC_API_Client( 'http://www.lyedekleri.com', $consumer_key, $consum
 
 
 $results = $wpdb->get_results( $sqlQuery );
-foreach ( $results as $product ) {
+foreach ( $results as $productt ) {
 
-	$productId      = getProductInfoWithSku( $product->stokKodu );
-	$in_stock       = ( $product->bakiye == 0 ? 'false' : 'true' );
-	$featured       = ( $product->bakiye == 0 ? 'false' : 'true' );
+	$productId      = getProductInfoWithSku( $productt->stokKodu );
+	$urunAd = ucwords( $productt->aracmarka . ' ' . $productt->aracmodel . ' ' . $productt->stokadi );
+
+	$in_stock       = ( $productt->bakiye == 0 ? 'false' : 'true' );
+//	$in_stock       = $productt->bakiye;
+	$featured       = ( $productt->bakiye == 0 ? 'false' : 'true' );
 	$imageCount     = 0;
 	$attributeCount = 0;
+
+	$product['title']=$urunAd;
+	$product['type']="simple";
+	$product['featured']=$featured;
+	$product['sku']=$productt->stokKodu;
+
+	$product['regular_price']=round(( $productt->fiyat * 1.95 ) * 1.18, 2);
+	$product['sale_price']=round(( $productt->fiyat * 1.65 ) * 1.18, 2);
+	$product['in_stock']=$in_stock;
+
+	$product['short_description']="Marka : ".$productt->urun_marka;
+
+
 	if ( $productId ) {
 		//   $productInfo = $client->products->get($productId);
-		$newData = '{
-        "product": {
-            "regular_price": "' .round(( $product->fiyat * 1.95 ) * 1.18, 2) . '",
-            "sale_price": "' . round(( $product->fiyat * 1.65 ) * 1.18, 2) . '",
-            "in_stock": ' . $in_stock . ',
-            "featured": ' . $featured . '
-      }
-    }';
-		$test    = json_decode( $newData, 1 );
 
-		if ( $client->products->update( $productId, $test ) ) {
-			$wpdb->get_results( "update askdbyeni set status =3 where stokodu='" . $product->stokodu . "'" );
-			echo "Product Updated => " . $product->stokKodu . " Stock -> " . $in_stock . "\n";
+		if ( $client->products->update( $productId, $product ) ) {
+			$wpdb->get_results( "update askdbyeni set status =3 where stokodu='" . $productt->stokodu . "'" );
+			echo "Product Updated => " . $productt->stokKodu . " Stock -> " . $in_stock . "\n";
+		}else{
+			print_r(json_encode($product));
 		}
+		unset($product);
 	} else {
 
-		$categories = createProductCategory( $product->aracmarka, $product->aracmodel, $product->anagrup, $product->altgrup );
+		$categories = createProductCategory( $productt->aracmarka, $productt->aracmodel, $productt->anagrup, $productt->altgrup );
 
-		$urunAd = ucwords( $product->aracmarka . ' ' . $product->aracmodel . ' ' . $product->stokadi );
-
-		//  $markaCat = strtolower(convert2Turkish("{$product->aracmarka}-yedek-parcalari"));
-		// $modelCat = strtolower(convert2Turkish("{$product->aracmarka}-{$product->aracmodel}-yedek-parcalari"));
-		// $anaGrupCat = strtolower(convert2Turkish("{$product->aracmarka}-{$product->aracmodel}-{$product->anagrup}"));
-		// $altGrupCat = strtolower(convert2Turkish("{$product->aracmarka}-{$product->aracmodel}-{$product->altgrup}"));
+		// $markaCat = strtolower(convert2Turkish("{$productt->aracmarka}-yedek-parcalari"));
+		// $modelCat = strtolower(convert2Turkish("{$productt->aracmarka}-{$productt->aracmodel}-yedek-parcalari"));
+		// $anaGrupCat = strtolower(convert2Turkish("{$productt->aracmarka}-{$productt->aracmodel}-{$productt->anagrup}"));
+		// $altGrupCat = strtolower(convert2Turkish("{$productt->aracmarka}-{$productt->aracmodel}-{$productt->altgrup}"));
 
 
-		$newData = '{
-    "product": {
-    "title": "' . $urunAd . '   ",
-    "type": "simple",
-    "regular_price": "' . round(( $product->fiyat * 1.95 ) * 1.18, 2) . '",
-    "sale_price": "' .round(( $product->fiyat * 1.65 ) * 1.18, 2) . '",
-    "in_stock": ' . $in_stock . ',
-    "featured": ' . $featured . ',
-    "sku": "' . $product->stokKodu . '",';
 
-		$description = "Stok Kodu \n";
-		//$description = "Stok Kodu : " . $product->stokKodu . "\n Ürün Adı :" . $urunAd . "\n";
-	/*
-			foreach ( $attributes as $attribute ) {
-			if ( $product->$attribute ) {
+		$description = "Stok Kodu  : " . $productt->stokKodu . "| Ürün Adı : " .$urunAd;
+//echo $description ; exit;
+		foreach ( $attributes as $attribute ) {
+			if ( $productt->$attribute ) {
 				if ( $attribute == 'yil_baslangic' ) {
 					$attribute = 'Yıl Aralığı';
-					$deger     = $product->yil_baslangic . "-" . $product->yil_bitis;
+					$deger     = $productt->yil_baslangic . "->" . $productt->yil_bitis;
 				} else if ( $attribute == 'yil_bitis' ) {
 					continue;
 				} else {
-					$deger = $product->$attribute;
+					$deger = $productt->$attribute;
 				}
-				$description .= ucwords( str_replace( '_', ' ', $attribute ) ) . " : " . $deger . "\n";
+				$description .= ucwords( str_replace( '_', ' ', $attribute ) ) . " : " . $deger . "|";
 			}
 
 		}
-*/
 
-		$newData .= '
-    "description": "' . substr($description,0,-2) . '",
-    "short_description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",';
+
+		$product['description']=$description;
+
 
 		$category = get_term_by( 'id', $categories['model'], 'product_cat' );
 		$mainCat  = get_term_by( 'id', $categories['ana_grup'], 'product_cat' );
 		$subCat   = get_term_by( 'id', $categories['alt_grup'], 'product_cat' );
 
-		$newData .= '"categories": [
-             "' . $category->name . '",
-             "' . $mainCat->name . '",
-             "' . $subCat->name . '"
-        ],
-        "tags": [
-             "' . $product->aracmarka . '",
-             "' . $product->aracmodel . '",
-             "' . $product->anagrup . '",
-             "' . $product->altgrup . '"
-        ]';
+		$product['categories']= array($category->name, $mainCat->name, $subCat->name);
+		$product['tags']= array($productt->aracmarka, $productt->aracmodel, $productt->aracmarka.' '.$productt->aracmodel.' '.$productt->anagrup, $productt->aracmarka.' '.$productt->aracmodel.' '.$productt->altgrup);
 
 
-		$imageData = ', "images": [';
 
-		if ( file_exists( "wp-content/uploads/2013/06/" . $product->stokodu . ".jpeg" ) ) {
-			$newImage = copy( "wp-content/uploads/2013/06/" . $product->stokodu . ".jpeg", "wp-content/uploads/2013/06/" . convert2Turkish( $urunAd ) . ".jpg" );
-			$imageData .= '{
-          "src": "http://www.lyedekleri.com/wp-content/uploads/2013/06/' . convert2Turkish( $urunAd ) . '.jpg",
-          "title":"' . $urunAd . '",
-          "alt":"' . $urunAd . '",
-          "position": ' . $imageCount . '
-         },';
+		$images = array();
+
+		if ( file_exists( "wp-content/uploads/2013/06/" . $productt->stokodu . ".jpeg" ) ) {
+			$newImage = copy( "wp-content/uploads/2013/06/" . $productt->stokodu . ".jpeg", "wp-content/uploads/2013/06/" . convert2Turkish( $urunAd ) . ".jpg" );
+
+			$images[$imageCount]['src'] = "http://www.lyedekleri.com/wp-content/uploads/2013/06/" . convert2Turkish( $urunAd ) . ".jpg";
+			$images[$imageCount]['title'] = $urunAd;
+			$images[$imageCount]['alt'] = $urunAd ;
+			$images[$imageCount]['position'] = $imageCount;
+
 			$imageCount ++;
 		}
 
 		// $imageData .= ']';
 
 		if ( $imageCount > 0 ) {
-			$newData .= substr( $imageData, 0, - 1 ) . ']';
+			$product['images'] = $images;
 		}
 
-		$attributeData = ', "attributes": [';
+		$attribut = array();
+
 
 		foreach ( $attributes as $attribute ) {
-			if ( $product->$attribute ) {
-				$attributeData .= '{
-		"name": "' . ucwords( str_replace( '_', ' ', $attribute ) ) . '",
-        "slug": "' . $attribute . '",
-        "position": "' . $attributeCount . '",
-        "visible": true,
-        "variation": false,
-         "options": [
-          "' . $product->$attribute . '"
-         ]
-         },';
+			if ( $productt->$attribute ) {
+				$attribut[$attributeCount]["name"] = ucwords( str_replace( '_', ' ', $attribute ) );
+				$attribut[$attributeCount]["slug"] = $attribute;
+				$attribut[$attributeCount]["position"] = $attributeCount;
+				$attribut[$attributeCount]["visible"]= true;
+				$attribut[$attributeCount]["variation"]= false;
+
+				$attribut[$attributeCount]["options"]=array($productt->$attribute);
+
 				$attributeCount ++;
 			}
 
 		}
 
 		if ( $attributeCount > 0 ) {
-			$newData .= substr( $attributeData, 0, - 1 ) . ']';
+			$product['attributes'] = $attribut;
 		}
 
 
-		$newData .= '
-}
-}';
+		$newProduct['product']=$product;
 
-		$test = json_decode( $newData, 1 );
 
-		if ( $client->products->create( $test ) ) {
-			echo "Product Created => " . $product->stokKodu . " Stock -> " . $in_stock . "\n";
-			$wpdb->get_results( "update askdbyeni set status =9 where stokodu='" . $product->stokodu . "'" );
+		if ( $create = $client->products->create( $product ) ) {
 
+			$prId = $create->product->id;
+			wp_set_post_terms( $prId, $categories, 'product_cat', false );
+			//wp_set_object_terms( $object_id, $terms, $taxonomy, $append = false );
+			echo "Product Created => " . $productt->stokKodu . " Stock -> " . $in_stock . "\n";
+			$wpdb->get_results( "update askdbyeni set status =9 where stokodu='" . $productt->stokodu . "'" );
+
+		}else{
+			print_r(json_encode($product));
 		}
 	}
 	/*    try {

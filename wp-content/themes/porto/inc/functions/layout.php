@@ -337,6 +337,16 @@ function porto_breadcrumbs() {
                         $ancestor = get_term( $ancestor, 'product_cat' );
 
                         if ( ! is_wp_error( $ancestor ) && $ancestor ) {
+	                        if($ancestor->parent){
+		                        $count=0;
+		                        $splitted = explode(' ',$ancestor->name);
+		                        $ancestor->name=null;
+		                        foreach($splitted as $split){
+			                        if($count>0) $ancestor->name .= $split.' ';
+			                        $count++;
+		                        }
+		                        substr($ancestor->name, 0 ,-1);
+	                        }
                             echo $before . '<a href="' . get_term_link( $ancestor ) . '">' . $ancestor->name . '</a>' . $delimiter . $after;
                         }
                     }
