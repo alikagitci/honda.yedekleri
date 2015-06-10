@@ -1,4 +1,5 @@
 <?php
+define('WP_CACHE', TRUE);
 /**
  * WordPress için taban ayar dosyası.
  *
