@@ -16,9 +16,7 @@ $options = array(
 	"timeout"         => 30,
 	"ssl_verify"      => false,
 );
-echo $dir = get_stylesheet_directory() . '/vc_new_templates_dir';
-exit;
-$newProduct=array();
+
 $product=array();
 
 $sqlQuery = "SELECT CONCAT(c.stokodu,'-', d.match_id) as stokKodu, c.stokodu, c.UreticiKodu, c.urun_marka, c.urun_adi as stokadi, c.olculer, c.motor_hacmi,
@@ -65,6 +63,16 @@ $attributes = array(
 
 $client = new WC_API_Client( 'http://www.lyedekleri.com', $consumer_key, $consumer_secret, $options );
 
+$thumbnail_id = get_woocommerce_term_meta( 297, 'thumbnail_id', true );
+echo $image = wp_get_attachment_url( $thumbnail_id );
+exit;
+
+echo "<pre>";
+print_r( $client->products->get_categories(69) );
+
+//$prod = $client->products->get(1567);
+//var_dump($prod);
+//exit;
 
 $results = $wpdb->get_results( $sqlQuery );
 foreach ( $results as $productt ) {
@@ -72,9 +80,10 @@ foreach ( $results as $productt ) {
 	$productId      = getProductInfoWithSku( $productt->stokKodu );
 	$urunAd = ucwords( $productt->aracmarka . ' ' . $productt->aracmodel . ' ' . $productt->stokadi );
 
-	$in_stock       = ( $productt->bakiye == 0 ? 'false' : 'true' );
+	$in_stock       = ( $productt->bakiye == 0 ? false : true );
 //	$in_stock       = $productt->bakiye;
-	$featured       = ( $productt->bakiye == 0 ? 'false' : 'true' );
+	$stock_quantity       = $productt->bakiye;
+	$featured       = ( $productt->bakiye == 0 ? false : true );
 	$imageCount     = 0;
 	$attributeCount = 0;
 
@@ -83,9 +92,11 @@ foreach ( $results as $productt ) {
 	$product['featured']=$featured;
 	$product['sku']=$productt->stokKodu;
 
-	$product['regular_price']=round(( $productt->fiyat * 1.95 ) * 1.18, 2);
-	$product['sale_price']=round(( $productt->fiyat * 1.65 ) * 1.18, 2);
+	$product['regular_price']=round(( $productt->fiyat * 2.75 ) * 1.18, 2);
+	$product['sale_price']=round(( $productt->fiyat * 1.80 ) * 1.18, 2);
 	$product['in_stock']=$in_stock;
+	$product['stock_quantity']=$stock_quantity;
+	$product['managing_stock']=false;
 
 	$product['short_description']="Marka : ".$productt->urun_marka;
 
@@ -111,7 +122,7 @@ foreach ( $results as $productt ) {
 
 
 
-		$description = "Stok Kodu  : " . $productt->stokKodu . "| Ürün Adı : " .$urunAd;
+		$description = "Stok Kodu  : " . $productt->stokKodu . "| Ürün Adı : " .$urunAd. "|";
 //echo $description ; exit;
 		foreach ( $attributes as $attribute ) {
 			if ( $productt->$attribute ) {
@@ -137,7 +148,7 @@ foreach ( $results as $productt ) {
 		$subCat   = get_term_by( 'id', $categories['alt_grup'], 'product_cat' );
 
 		$product['categories']= array($category->name, $mainCat->name, $subCat->name);
-		$product['tags']= array($productt->aracmarka, $productt->aracmodel, $productt->aracmarka.' '.$productt->aracmodel.' '.$productt->anagrup, $productt->aracmarka.' '.$productt->aracmodel.' '.$productt->altgrup);
+		$product['tags']= array($productt->aracmarka, $productt->aracmodel, $productt->anagrup, $productt->altgrup);
 
 
 
@@ -183,11 +194,7 @@ foreach ( $results as $productt ) {
 		}
 
 
-		$newProduct['product']=$product;
-
-
 		if ( $create = $client->products->create( $product ) ) {
-
 			$prId = $create->product->id;
 			wp_set_post_terms( $prId, $categories, 'product_cat', false );
 			//wp_set_object_terms( $object_id, $terms, $taxonomy, $append = false );
@@ -402,13 +409,15 @@ function modelCreate( $parent_term_id, $aracMarka, $aracModel ) {
 
 function anaGrupCreate( $parent_term_id, $aracMarka, $aracModel, $anaGrup ) {
 
-	$parent_term = wp_insert_term(
+    $parent_term = wp_insert_term(
 		$anaGrup, // the term
 		'product_cat', // the taxonomy
 		array(
 			'description' => $aracMarka . ' ' . $aracModel . ' Modeline ait ' . $anaGrup . ' kategorisindeki ürünleri görüntülemektesiniz.  http://' . strtolower( $aracMarka ) . '.yedekleri.com',
 			'slug'        => convert2Turkish( "{$aracMarka}-{$aracModel}-{$anaGrup}" ),
-			'parent'      => $parent_term_id
+			'parent'      => $parent_term_id,
+            'image'       => array('src'=>'http://www.lyedekleri.com/wp-content/uploads/2015/06/aks.png'),
+            'product_cat_thumbnail'       => array('src'=>'http://www.lyedekleri.com/wp-content/uploads/2015/06/aks.png')
 		)
 	);
 
@@ -424,8 +433,11 @@ function altGrupCreate( $parent_term_id, $aracMarka, $aracModel, $anaGrup, $altG
 		array(
 			'description' => $aracMarka . ' ' . $aracModel . ' Modeline ait ' . $anaGrup . ' grubundaki ' . $altGrup . ' ürünlerini görüntülemektesiniz.',
 			'slug'        => convert2Turkish( "{$aracMarka}-{$aracModel}-{$altGrup}" ),
-			'parent'      => $parent_term_id
-		)
+			'parent'      => $parent_term_id,
+            'image'       => array('src'=>'http://www.lyedekleri.com/wp-content/uploads/2015/06/aks.png'),
+            'product_cat_thumbnail'       => array('src'=>'http://www.lyedekleri.com/wp-content/uploads/2015/06/aks.png')
+
+        )
 	);
 
 	return $parent_term['term_id'];
