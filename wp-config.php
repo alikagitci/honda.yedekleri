@@ -22,6 +22,11 @@ define('FS_METHOD', 'direct');
 define('EMPTY_TRASH_DAYS', 0 );
 define('DB_NAME', 'yedekleri');
 
+define('WP_DEBUG', true);
+define('WP_DEBUG_DISPLAY', true); 
+define('WP_MEMORY_LIMIT', '1024M');
+//define('WPCACHEHOME', '/var/www/yedekleri/wp-content/plugins/wp-super-cache/');
+
 /** MySQL veritabanı kullanıcısı */
 define('DB_USER', 'yedekleri');
 

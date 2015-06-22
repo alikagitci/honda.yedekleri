@@ -28,8 +28,8 @@
       <file leaf-file-name="cron3.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cron3.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="2.855856" vertical-offset="4959" max-vertical-offset="6780">
-              <caret line="394" column="9" selection-start-line="394" selection-start-column="9" selection-end-line="394" selection-end-column="9" />
+            <state vertical-scroll-proportion="0.7837838" vertical-offset="5244" max-vertical-offset="6780">
+              <caret line="367" column="20" selection-start-line="367" selection-start-column="20" selection-end-line="367" selection-end-column="20" />
               <folding>
                 <marker date="1434808218000" expanded="true" signature="684:1711" placeholder="SELECT CONCA..askdbyeni..." />
                 <marker date="1434808218000" expanded="true" signature="3855:3928" placeholder="update askdb..." />
@@ -1088,8 +1088,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cron3.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.855856" vertical-offset="4959" max-vertical-offset="6780">
-          <caret line="394" column="9" selection-start-line="394" selection-start-column="9" selection-end-line="394" selection-end-column="9" />
+        <state vertical-scroll-proportion="0.7837838" vertical-offset="5244" max-vertical-offset="6780">
+          <caret line="367" column="20" selection-start-line="367" selection-start-column="20" selection-end-line="367" selection-end-column="20" />
           <folding>
             <marker date="1434808218000" expanded="true" signature="684:1711" placeholder="SELECT CONCA..askdbyeni..." />
             <marker date="1434808218000" expanded="true" signature="3855:3928" placeholder="update askdb..." />
