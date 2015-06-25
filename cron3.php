@@ -16,7 +16,6 @@ $options = array(
 	"timeout"         => 30,
 	"ssl_verify"      => false,
 );
-
 $product=array();
 
 $sqlQuery = "SELECT CONCAT(c.stokodu,'-', d.match_id) as stokKodu, c.stokodu, c.UreticiKodu, c.urun_marka, c.urun_adi as stokadi, c.olculer, c.motor_hacmi,

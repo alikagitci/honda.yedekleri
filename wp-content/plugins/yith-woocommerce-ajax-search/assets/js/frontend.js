@@ -5,6 +5,7 @@
  * @package YITH WooCommerce Ajax Search
  * @version 1.1.1
  */
+
 jQuery(document).ready(function ($) {
     "use strict";
 
@@ -28,7 +29,7 @@ jQuery(document).ready(function ($) {
         var $t = $(this),
             append_to = ( typeof  $t.data('append-to') == 'undefined') ? $t.closest('.yith-ajaxsearchform-container') : $t.data('append-to');
 
-        el.autocomplete({
+        el.yithautocomplete({
             minChars        : min_chars,
             appendTo        : append_to,
             serviceUrl      : woocommerce_params.ajax_url + '?action=yith_ajax_search_products',
