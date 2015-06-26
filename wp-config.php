@@ -17,15 +17,14 @@
 
 // ** MySQL ayarları - Bu bilgileri sunucunuzdan alabilirsiniz ** //
 /** WordPress için kullanılacak veritabanının adı */
+define('WP_CACHE', true); //Added by WP-Cache Manager
 define( 'WP_MEMORY_LIMIT', '256M' );
 define('FS_METHOD', 'direct');
 define('EMPTY_TRASH_DAYS', 0 );
 define('DB_NAME', 'yedekleri');
 
-define('WP_DEBUG', true);
-define('WP_DEBUG_DISPLAY', true); 
-define('WP_MEMORY_LIMIT', '1024M');
-//define('WPCACHEHOME', '/var/www/yedekleri/wp-content/plugins/wp-super-cache/');
+define( 'WPCACHEHOME', '/Users/alikagitci/www/yedekleri/wp-content/plugins/wp-super-cache/' ); //Added by WP-Cache Manager
+
 
 /** MySQL veritabanı kullanıcısı */
 define('DB_USER', 'yedekleri');

@@ -25,10 +25,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="cron3.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="cron3.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cron3.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.38659793" vertical-offset="90" max-vertical-offset="6765">
+            <state vertical-scroll-proportion="-4.5" vertical-offset="90" max-vertical-offset="6765">
               <caret line="21" column="3" selection-start-line="21" selection-start-column="3" selection-end-line="21" selection-end-column="3" />
               <folding>
                 <marker date="1435071359000" expanded="true" signature="683:1710" placeholder="SELECT CONCA..askdbyeni..." />
@@ -40,11 +40,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="wp-config.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="wp-config.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wp-config.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.708333" vertical-offset="832" max-vertical-offset="1455">
-              <caret line="79" column="0" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.29605263" vertical-offset="165" max-vertical-offset="1440">
+              <caret line="23" column="31" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
               <folding>
                 <element signature="e#7#594#0#PHP" expanded="true" />
               </folding>
@@ -1185,25 +1185,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wp-config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.708333" vertical-offset="832" max-vertical-offset="1455">
-          <caret line="79" column="0" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
-          <folding>
-            <element signature="e#7#594#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cron3.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38659793" vertical-offset="90" max-vertical-offset="6765">
+        <state vertical-scroll-proportion="-4.5" vertical-offset="90" max-vertical-offset="6765">
           <caret line="21" column="3" selection-start-line="21" selection-start-column="3" selection-end-line="21" selection-end-column="3" />
           <folding>
             <marker date="1435071359000" expanded="true" signature="683:1710" placeholder="SELECT CONCA..askdbyeni..." />
             <marker date="1435071359000" expanded="true" signature="3854:3927" placeholder="update askdb..." />
             <marker date="1435071359000" expanded="true" signature="7264:7337" placeholder="update askdb..." />
             <marker date="1435071359000" expanded="true" signature="8807:8900" placeholder="select max(p..wp_postmeta..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.29605263" vertical-offset="165" max-vertical-offset="1440">
+          <caret line="23" column="31" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
+          <folding>
+            <element signature="e#7#594#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
