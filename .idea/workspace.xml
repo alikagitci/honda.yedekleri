@@ -42,11 +42,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="short-description.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="short-description.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wp-content/themes/porto/woocommerce/single-product/short-description.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7012987" vertical-offset="0" max-vertical-offset="385">
-              <caret line="24" column="6" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="6" />
+            <state vertical-scroll-proportion="-8.125" vertical-offset="0" max-vertical-offset="360">
+              <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="breadcrumbs.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wp-content/themes/porto/breadcrumbs.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.9583335" vertical-offset="187" max-vertical-offset="615">
+              <caret line="22" column="37" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="layout.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/wp-content/themes/porto/inc/functions/layout.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.33147633" vertical-offset="4966" max-vertical-offset="17790">
+              <caret line="339" column="0" selection-start-line="339" selection-start-column="0" selection-end-line="339" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -87,11 +107,11 @@
         <option value="$PROJECT_DIR$/wp-content/themes/porto/woocommerce/single-product/add-to-cart/variable.php" />
         <option value="$PROJECT_DIR$/wp-content/plugins/json-api/singletons/response.php" />
         <option value="$PROJECT_DIR$/lib/woocommerce-api/class-wc-api-client-http-request.php" />
-        <option value="$PROJECT_DIR$/wp-content/themes/porto/inc/functions/layout.php" />
         <option value="$PROJECT_DIR$/wp-config.php" />
         <option value="$PROJECT_DIR$/lib/woocommerce-api/class-wc-api-client.php" />
         <option value="$PROJECT_DIR$/cron3.php" />
         <option value="$PROJECT_DIR$/wp-content/themes/porto/woocommerce/single-product/short-description.php" />
+        <option value="$PROJECT_DIR$/wp-content/themes/porto/inc/functions/layout.php" />
       </list>
     </option>
   </component>
@@ -261,6 +281,62 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yedekleri" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yedekleri" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wp-content" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="themes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="porto" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="inc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yedekleri" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yedekleri" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wp-content" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="themes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="porto" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="inc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="functions" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -268,7 +344,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="lass-wc-api-client-http-request.php&#9;FILE&#9;file:///Users/alikagitci/www/yedekleri/lib/woocommerce-api/class-wc-api-client-http-request.php&#10;desc&#9;FILE&#9;file:///Users/alikagitci/www/yedekleri/wp-content/themes/porto/woocommerce/single-product/short-description.php&#10;class-wc-api-client-http-request.php&#9;FILE&#9;file:///Users/alikagitci/www/yedekleri/lib/woocommerce-api/class-wc-api-client-http-request.php&#10;wp-&#9;FILE&#9;file:///Users/alikagitci/www/yedekleri/wp-config.php&#10;cron5&#9;FILE&#9;file:///Users/alikagitci/www/yedekleri/cron4.php&#10;cro&#9;FILE&#9;file:///Users/alikagitci/www/yedekleri/cron5.php&#10;cron&#9;FILE&#9;file:///Users/alikagitci/www/yedekleri/cron5.php&#10;breadcr&#9;FILE&#9;file:///Users/alikagitci/www/yedekleri/wp-content/themes/porto/breadcrumbs.php&#10;CRON3&#9;FILE&#9;file:///Users/alikagitci/www/yedekleri/cron3.php&#10;additional-information.php&#9;FILE&#9;file:///Users/alikagitci/www/yedekleri/wp-content/plugins/woocommerce/templates/single-product/tabs/additional-information.php&#10;cron4&#9;FILE&#9;file:///Users/alikagitci/www/yedekleri/cron4.php&#10;.htac&#9;FILE&#9;file:///Users/alikagitci/www/yedekleri/.htaccess&#10;wp-con&#9;FILE&#9;file:///Users/alikagitci/www/yedekleri/wp-config.php" />
+    <property name="SearchEverywhereHistoryKey" value="bread&#9;FILE&#9;file:///Users/alikagitci/www/yedekleri/wp-content/themes/porto/breadcrumbs.php&#10;lass-wc-api-client-http-request.php&#9;FILE&#9;file:///Users/alikagitci/www/yedekleri/lib/woocommerce-api/class-wc-api-client-http-request.php&#10;desc&#9;FILE&#9;file:///Users/alikagitci/www/yedekleri/wp-content/themes/porto/woocommerce/single-product/short-description.php&#10;class-wc-api-client-http-request.php&#9;FILE&#9;file:///Users/alikagitci/www/yedekleri/lib/woocommerce-api/class-wc-api-client-http-request.php&#10;wp-&#9;FILE&#9;file:///Users/alikagitci/www/yedekleri/wp-config.php&#10;cron5&#9;FILE&#9;file:///Users/alikagitci/www/yedekleri/cron4.php&#10;cro&#9;FILE&#9;file:///Users/alikagitci/www/yedekleri/cron5.php&#10;cron&#9;FILE&#9;file:///Users/alikagitci/www/yedekleri/cron5.php&#10;breadcr&#9;FILE&#9;file:///Users/alikagitci/www/yedekleri/wp-content/themes/porto/breadcrumbs.php&#10;CRON3&#9;FILE&#9;file:///Users/alikagitci/www/yedekleri/cron3.php&#10;additional-information.php&#9;FILE&#9;file:///Users/alikagitci/www/yedekleri/wp-content/plugins/woocommerce/templates/single-product/tabs/additional-information.php&#10;cron4&#9;FILE&#9;file:///Users/alikagitci/www/yedekleri/cron4.php&#10;.htac&#9;FILE&#9;file:///Users/alikagitci/www/yedekleri/.htaccess&#10;wp-con&#9;FILE&#9;file:///Users/alikagitci/www/yedekleri/wp-config.php" />
     <property name="options.lastSelected" value="Configurable.PHP.Debug" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
@@ -417,6 +493,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="766" max-vertical-offset="3960">
           <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -424,6 +501,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="766" max-vertical-offset="3960">
           <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -431,6 +509,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="766" max-vertical-offset="3960">
           <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -508,6 +587,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="766" max-vertical-offset="3960">
           <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -529,13 +609,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2970">
           <caret line="36" column="70" selection-start-line="36" selection-start-column="70" selection-end-line="36" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/porto/inc/functions/layout.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.216763" vertical-offset="4995" max-vertical-offset="17775">
-          <caret line="338" column="72" selection-start-line="338" selection-start-column="72" selection-end-line="338" selection-end-column="72" />
         </state>
       </provider>
     </entry>
@@ -579,8 +652,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/themes/porto/woocommerce/single-product/short-description.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7012987" vertical-offset="0" max-vertical-offset="385">
-          <caret line="24" column="6" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="6" />
+        <state vertical-scroll-proportion="-8.125" vertical-offset="0" max-vertical-offset="360">
+          <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/porto/breadcrumbs.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.9583335" vertical-offset="187" max-vertical-offset="615">
+          <caret line="22" column="37" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/porto/inc/functions/layout.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33147633" vertical-offset="4966" max-vertical-offset="17790">
+          <caret line="339" column="0" selection-start-line="339" selection-start-column="0" selection-end-line="339" selection-end-column="0" />
           <folding />
         </state>
       </provider>
