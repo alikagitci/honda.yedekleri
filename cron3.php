@@ -18,7 +18,7 @@ $options = array(
 );
 $product=array();
 
-$sqlQuery = "SELECT CONCAT(c.stokodu,'-', d.match_id) as stokKodu, c.stokodu, c.UreticiKodu, c.urun_marka, c.urun_adi as stokadi, c.olculer, c.motor_hacmi,
+$sqlQuery = "SELECT CONCAT(c.stokodu,'-', d.match_id) as stokKodu, c.stokodu, c.UreticiKodu as ureticiKodu, c.urun_marka, c.urun_adi as stokadi, c.olculer, c.motor_hacmi,
               c.kasa_tipi,c.kapi_sayisi, c.yil_baslangic, c.yil_bitis, c.arac_tip, c.seri, c.oem_no, a.sysmarka as aracmarka, b.sysaracmodel as aracmodel, e.sysurunanagrup as anagrup, f.sysurunaltgrup as altgrup,
               c.fiyat as fiyat, c.dovtip as dovtip, c.bakiye as bakiye
                     FROM askdbyeni AS c
@@ -62,6 +62,7 @@ $attributes = array(
 
 $client = new WC_API_Client( 'http://www.lyedekleri.com', $consumer_key, $consumer_secret, $options );
 
+/*
 $thumbnail_id = get_woocommerce_term_meta( 297, 'thumbnail_id', true );
 echo $image = wp_get_attachment_url( $thumbnail_id );
 exit;
@@ -69,9 +70,11 @@ exit;
 echo "<pre>";
 print_r( $client->products->get_categories(69) );
 
-//$prod = $client->products->get(1567);
-//var_dump($prod);
-//exit;
+$prod = $client->products->get(1567);
+echo "<pre>";
+print_r($prod);
+exit;
+*/
 
 $results = $wpdb->get_results( $sqlQuery );
 foreach ( $results as $productt ) {
@@ -97,17 +100,12 @@ foreach ( $results as $productt ) {
 	$product['stock_quantity']=$stock_quantity;
 	$product['managing_stock']=false;
 
-	$product['short_description']="Marka : ".$productt->urun_marka;
-
-
 	if ( $productId ) {
 		//   $productInfo = $client->products->get($productId);
 
 		if ( $client->products->update( $productId, $product ) ) {
 			$wpdb->get_results( "update askdbyeni set status =3 where stokodu='" . $productt->stokodu . "'" );
 			echo "Product Updated => " . $productt->stokKodu . " Stock -> " . $in_stock . "\n";
-		}else{
-			print_r(json_encode($product));
 		}
 		unset($product);
 	} else {
@@ -121,25 +119,28 @@ foreach ( $results as $productt ) {
 
 
 
-		$description = "Stok Kodu  : " . $productt->stokKodu . "| Ürün Adı : " .$urunAd. "|";
+		//"Stok Kodu  : " . $productt->stokKodu. "|";
+		// . "| Ürün Adı : " .$urunAd. "|";
 //echo $description ; exit;
+        $description = null;
+
 		foreach ( $attributes as $attribute ) {
 			if ( $productt->$attribute ) {
 				if ( $attribute == 'yil_baslangic' ) {
 					$attribute = 'Yıl Aralığı';
-					$deger     = $productt->yil_baslangic . "->" . $productt->yil_bitis;
+					$deger     = $productt->yil_baslangic . " -> " . $productt->yil_bitis;
 				} else if ( $attribute == 'yil_bitis' ) {
 					continue;
 				} else {
 					$deger = $productt->$attribute;
 				}
-				$description .= ucwords( str_replace( '_', ' ', $attribute ) ) . " : " . $deger . "|";
+				$description .= ucwords( str_replace( '_', ' ', $attribute ) ) . " : " . $deger . '|';
 			}
 
 		}
 
 
-		$product['description']=$description;
+		$product['short_description']=$description;
 
 
 		$category = get_term_by( 'id', $categories['model'], 'product_cat' );
@@ -148,6 +149,12 @@ foreach ( $results as $productt ) {
 
 		$product['categories']= array($category->name, $mainCat->name, $subCat->name);
 		$product['tags']= array($productt->aracmarka, $productt->aracmodel, $productt->anagrup, $productt->altgrup);
+
+
+        $product['description']="\tHonda ".$productt->aracmodel ." model araclarda kullanılmak için üretilen ". $productt->aracmarka . ' ' . $productt->aracmodel . ' ' . $productt->stokadi ."
+	aracınızda sorunsuz olarak kullanabilirsiniz.|| \tAracınıza yaptığınız modifiye sebebiyle yada herhangi farklı bir sebepten dolayı ".  $productt->aracmarka . ' ' . $productt->aracmodel . ' ' . $productt->stokadi  ." ürününde aracınızda uyumsuzluk yaşarsanız, teslim aldıktan sonra|
+	15 gün içerisinde  ürünü kullanmadan ve tekrar satılabililirlik özelliğini kaybetmeden iade edebilirsiniz.||\tHonda ". $category->name ." için ". $mainCat->name ." kategorisinde aradığınız kaliteli ve uyumlu oto Yedek Parçaları,
+	uygun yedek parça fiyatlarıyla ". $mainCat->name ." kategorisinde bulabilirsiniz.";
 
 
 
@@ -200,8 +207,6 @@ foreach ( $results as $productt ) {
 			echo "Product Created => " . $productt->stokKodu . " Stock -> " . $in_stock . "\n";
 			$wpdb->get_results( "update askdbyeni set status =9 where stokodu='" . $productt->stokodu . "'" );
 
-		}else{
-			print_r(json_encode($product));
 		}
 	}
 	/*    try {
