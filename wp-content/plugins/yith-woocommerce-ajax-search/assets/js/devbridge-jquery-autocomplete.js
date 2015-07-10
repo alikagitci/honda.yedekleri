@@ -22,7 +22,6 @@
     }
 }(function ($) {
     'use strict';
-
     var
         utils = (function () {
             return {
@@ -126,6 +125,7 @@
     };
 
     Autocomplete.prototype = {
+
         killerFn: null,
 
         initialize: function () {
@@ -507,14 +507,14 @@
                     type: options.type,
                     dataType: options.dataType
                 }).done(function (data) {
-                        var result;
-                        that.currentRequest = null;
-                        result = options.transformResult(data);
-                        that.processResponse(result, q, cacheKey);
-                        options.onSearchComplete.call(that.element, q, result.suggestions);
-                    }).fail(function (jqXHR, textStatus, errorThrown) {
-                        options.onSearchError.call(that.element, q, jqXHR, textStatus, errorThrown);
-                    });
+                    var result;
+                    that.currentRequest = null;
+                    result = options.transformResult(data);
+                    that.processResponse(result, q, cacheKey);
+                    options.onSearchComplete.call(that.element, q, result.suggestions);
+                }).fail(function (jqXHR, textStatus, errorThrown) {
+                    options.onSearchError.call(that.element, q, jqXHR, textStatus, errorThrown);
+                });
             }
         },
 

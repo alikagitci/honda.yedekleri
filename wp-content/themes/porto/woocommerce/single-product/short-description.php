@@ -17,6 +17,8 @@ if ( ! $post->post_excerpt ) {
     return;
 }
 
+$post->post_excerpt = str_replace('|','<br>',str_replace( ']]>', ']]&gt;', $post->post_excerpt ));
+
 ?>
 <div class="description" itemprop="description">
 	<?php echo apply_filters( 'woocommerce_short_description', $post->post_excerpt ) ?>

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * WordPress için taban ayar dosyası.
  *
@@ -16,10 +17,14 @@
 
 // ** MySQL ayarları - Bu bilgileri sunucunuzdan alabilirsiniz ** //
 /** WordPress için kullanılacak veritabanının adı */
+define('WP_CACHE', true); //Added by WP-Cache Manager
 define( 'WP_MEMORY_LIMIT', '256M' );
 define('FS_METHOD', 'direct');
 define('EMPTY_TRASH_DAYS', 0 );
 define('DB_NAME', 'yedekleri');
+
+define( 'WPCACHEHOME', '/Users/alikagitci/www/yedekleri/wp-content/plugins/wp-super-cache/' ); //Added by WP-Cache Manager
+
 
 /** MySQL veritabanı kullanıcısı */
 define('DB_USER', 'yedekleri');

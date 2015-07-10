@@ -420,7 +420,7 @@ function porto_woocommerce_product_nav() {
         global $post;
 
         // get categories
-        $terms = wp_get_post_terms( $post->ID, 'product_cat' );
+         $terms = wp_get_post_terms( $post->ID, 'product_cat' );
         foreach ( $terms as $term ) $cats_array[] = $term->term_id;
 
         // get all posts in current categories
