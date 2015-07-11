@@ -23,7 +23,7 @@ define('FS_METHOD', 'direct');
 define('EMPTY_TRASH_DAYS', 0 );
 define('DB_NAME', 'yedekleri');
 
-define( 'WPCACHEHOME', '/Users/alikagitci/www/yedekleri/wp-content/plugins/wp-super-cache/' ); //Added by WP-Cache Manager
+define( 'WPCACHEHOME', '/var/www/honda.yedekleri/wp-content/plugins/wp-super-cache/' ); //Added by WP-Cache Manager
 
 
 /** MySQL veritabanı kullanıcısı */
@@ -33,7 +33,7 @@ define('DB_USER', 'yedekleri');
 define('DB_PASSWORD', 'yedekleri');
 
 /** MySQL sunucusu */
-define('DB_HOST', '127.0.0.1');
+define('DB_HOST', 'localhost');
 
 /** Yaratılacak tablolar için veritabanı karakter seti. */
 define('DB_CHARSET', 'utf8');
@@ -75,7 +75,7 @@ $table_prefix  = 'wp_';
  * Tema ve eklenti geliştiricilerinin geliştirme aşamasında WP_DEBUG
  * kullanmalarını önemle tavsiye ederiz.
  */
-define('WP_DEBUG', false);
+//define('WP_DEBUG', false);
 
 /* Hepsi bu kadar. Mutlu bloglamalar! */
 

@@ -16,9 +16,11 @@ $options = array(
 	"timeout"         => 30,
 	"ssl_verify"      => false,
 );
+
+$newProduct=array();
 $product=array();
 
-$sqlQuery = "SELECT CONCAT(c.stokodu,'-', d.match_id) as stokKodu, c.stokodu, c.UreticiKodu as ureticiKodu, c.urun_marka, c.urun_adi as stokadi, c.olculer, c.motor_hacmi,
+$sqlQuery = "SELECT CONCAT(c.stokodu,'-', d.match_id) as stokKodu, c.stokodu, c.UreticiKodu, c.urun_marka, c.urun_adi as stokadi, c.olculer, c.motor_hacmi,
               c.kasa_tipi,c.kapi_sayisi, c.yil_baslangic, c.yil_bitis, c.arac_tip, c.seri, c.oem_no, a.sysmarka as aracmarka, b.sysaracmodel as aracmodel, e.sysurunanagrup as anagrup, f.sysurunaltgrup as altgrup,
               c.fiyat as fiyat, c.dovtip as dovtip, c.bakiye as bakiye
                     FROM askdbyeni AS c
@@ -36,7 +38,7 @@ $sqlQuery = "SELECT CONCAT(c.stokodu,'-', d.match_id) as stokKodu, c.stokodu, c.
 global $wpdb;
 $consumer_key    = 'ck_7c96beb6bf85652974fd8ab0d0a34e24'; // Add your own Consumer Key here
 $consumer_secret = 'cs_b44eb010c209f0fcc428b9668caf1d6b'; // Add your own Consumer Secret here
-$store_url       = 'http://www.lyedekleri.com/'; // Add the home URL to the store you want to connect to here
+$store_url       = 'http://honda.yedekleri.com/'; // Add the home URL to the store you want to connect to here
 
 $options = array(
 	'debug'           => true,
@@ -60,21 +62,8 @@ $attributes = array(
 	'ureticiKodu'
 );
 
-$client = new WC_API_Client( 'http://www.lyedekleri.com', $consumer_key, $consumer_secret, $options );
+$client = new WC_API_Client( 'http://honda.yedekleri.com', $consumer_key, $consumer_secret, $options );
 
-/*
-$thumbnail_id = get_woocommerce_term_meta( 297, 'thumbnail_id', true );
-echo $image = wp_get_attachment_url( $thumbnail_id );
-exit;
-
-echo "<pre>";
-print_r( $client->products->get_categories(69) );
-
-$prod = $client->products->get(1567);
-echo "<pre>";
-print_r($prod);
-exit;
-*/
 
 $results = $wpdb->get_results( $sqlQuery );
 foreach ( $results as $productt ) {
@@ -82,10 +71,9 @@ foreach ( $results as $productt ) {
 	$productId      = getProductInfoWithSku( $productt->stokKodu );
 	$urunAd = ucwords( $productt->aracmarka . ' ' . $productt->aracmodel . ' ' . $productt->stokadi );
 
-	$in_stock       = ( $productt->bakiye == 0 ? false : true );
+	$in_stock       = ( $productt->bakiye == 0 ? 'false' : 'true' );
 //	$in_stock       = $productt->bakiye;
-	$stock_quantity       = $productt->bakiye;
-	$featured       = ( $productt->bakiye == 0 ? false : true );
+	$featured       = ( $productt->bakiye == 0 ? 'false' : 'true' );
 	$imageCount     = 0;
 	$attributeCount = 0;
 
@@ -94,11 +82,12 @@ foreach ( $results as $productt ) {
 	$product['featured']=$featured;
 	$product['sku']=$productt->stokKodu;
 
-	$product['regular_price']=round(( $productt->fiyat * 2.75 ) * 1.18, 2);
-	$product['sale_price']=round(( $productt->fiyat * 1.80 ) * 1.18, 2);
+	$product['regular_price']=round(( $productt->fiyat * 1.95 ) * 1.18, 2);
+	$product['sale_price']=round(( $productt->fiyat * 1.65 ) * 1.18, 2);
 	$product['in_stock']=$in_stock;
-	$product['stock_quantity']=$stock_quantity;
-	$product['managing_stock']=false;
+
+	$product['short_description']="Marka : ".$productt->urun_marka;
+
 
 	if ( $productId ) {
 		//   $productInfo = $client->products->get($productId);
@@ -106,6 +95,8 @@ foreach ( $results as $productt ) {
 		if ( $client->products->update( $productId, $product ) ) {
 			$wpdb->get_results( "update askdbyeni set status =3 where stokodu='" . $productt->stokodu . "'" );
 			echo "Product Updated => " . $productt->stokKodu . " Stock -> " . $in_stock . "\n";
+		}else{
+			print_r(json_encode($product));
 		}
 		unset($product);
 	} else {
@@ -119,28 +110,25 @@ foreach ( $results as $productt ) {
 
 
 
-		//"Stok Kodu  : " . $productt->stokKodu. "|";
-		// . "| Ürün Adı : " .$urunAd. "|";
+		$description = "Stok Kodu  : " . $productt->stokKodu . "| Ürün Adı : " .$urunAd;
 //echo $description ; exit;
-        $description = null;
-
 		foreach ( $attributes as $attribute ) {
 			if ( $productt->$attribute ) {
 				if ( $attribute == 'yil_baslangic' ) {
 					$attribute = 'Yıl Aralığı';
-					$deger     = $productt->yil_baslangic . " -> " . $productt->yil_bitis;
+					$deger     = $productt->yil_baslangic . "->" . $productt->yil_bitis;
 				} else if ( $attribute == 'yil_bitis' ) {
 					continue;
 				} else {
 					$deger = $productt->$attribute;
 				}
-				$description .= ucwords( str_replace( '_', ' ', $attribute ) ) . " : " . $deger . '|';
+				$description .= ucwords( str_replace( '_', ' ', $attribute ) ) . " : " . $deger . "|";
 			}
 
 		}
 
 
-		$product['short_description']=$description;
+		$product['description']=$description;
 
 
 		$category = get_term_by( 'id', $categories['model'], 'product_cat' );
@@ -148,22 +136,16 @@ foreach ( $results as $productt ) {
 		$subCat   = get_term_by( 'id', $categories['alt_grup'], 'product_cat' );
 
 		$product['categories']= array($category->name, $mainCat->name, $subCat->name);
-		$product['tags']= array($productt->aracmarka, $productt->aracmodel, $productt->anagrup, $productt->altgrup);
-
-
-        $product['description']="\tHonda ".$productt->aracmodel ." model araclarda kullanılmak için üretilen ". $productt->aracmarka . ' ' . $productt->aracmodel . ' ' . $productt->stokadi ."
-	aracınızda sorunsuz olarak kullanabilirsiniz.|| \tAracınıza yaptığınız modifiye sebebiyle yada herhangi farklı bir sebepten dolayı ".  $productt->aracmarka . ' ' . $productt->aracmodel . ' ' . $productt->stokadi  ." ürününde aracınızda uyumsuzluk yaşarsanız, teslim aldıktan sonra|
-	15 gün içerisinde  ürünü kullanmadan ve tekrar satılabililirlik özelliğini kaybetmeden iade edebilirsiniz.||\tHonda ". $category->name ." için ". $mainCat->name ." kategorisinde aradığınız kaliteli ve uyumlu oto Yedek Parçaları,
-	uygun yedek parça fiyatlarıyla ". $mainCat->name ." kategorisinde bulabilirsiniz.";
+		$product['tags']= array($productt->aracmarka, $productt->aracmodel, $productt->aracmarka.' '.$productt->aracmodel.' '.$productt->anagrup, $productt->aracmarka.' '.$productt->aracmodel.' '.$productt->altgrup);
 
 
 
 		$images = array();
 
-		if ( file_exists( "wp-content/uploads/2013/06/" . $productt->stokodu . ".jpeg" ) ) {
-			$newImage = copy( "wp-content/uploads/2013/06/" . $productt->stokodu . ".jpeg", "wp-content/uploads/2013/06/" . convert2Turkish( $urunAd ) . ".jpg" );
+		if ( file_exists( "/var/www/honda.yedekleri/wp-content/uploads/2013/06/" . $productt->stokodu . ".jpeg" ) ) {
+			$newImage = copy( "/var/www/honda.yedekleri/wp-content/uploads/2013/06/" . $productt->stokodu . ".jpeg", "/var/www/honda.yedekleri/wp-content/uploads/2013/06/" . convert2Turkish( $urunAd ) . ".jpg" );
 
-			$images[$imageCount]['src'] = "http://www.lyedekleri.com/wp-content/uploads/2013/06/" . convert2Turkish( $urunAd ) . ".jpg";
+			$images[$imageCount]['src'] = "http://honda.yedekleri.com/wp-content/uploads/2013/06/" . convert2Turkish( $urunAd ) . ".jpg";
 			$images[$imageCount]['title'] = $urunAd;
 			$images[$imageCount]['alt'] = $urunAd ;
 			$images[$imageCount]['position'] = $imageCount;
@@ -200,13 +182,19 @@ foreach ( $results as $productt ) {
 		}
 
 
+		$newProduct['product']=$product;
+
+
 		if ( $create = $client->products->create( $product ) ) {
+
 			$prId = $create->product->id;
 			wp_set_post_terms( $prId, $categories, 'product_cat', false );
 			//wp_set_object_terms( $object_id, $terms, $taxonomy, $append = false );
 			echo "Product Created => " . $productt->stokKodu . " Stock -> " . $in_stock . "\n";
 			$wpdb->get_results( "update askdbyeni set status =9 where stokodu='" . $productt->stokodu . "'" );
 
+		}else{
+			print_r(json_encode($product));
 		}
 	}
 	/*    try {
@@ -413,15 +401,13 @@ function modelCreate( $parent_term_id, $aracMarka, $aracModel ) {
 
 function anaGrupCreate( $parent_term_id, $aracMarka, $aracModel, $anaGrup ) {
 
-    $parent_term = wp_insert_term(
+	$parent_term = wp_insert_term(
 		$anaGrup, // the term
 		'product_cat', // the taxonomy
 		array(
 			'description' => $aracMarka . ' ' . $aracModel . ' Modeline ait ' . $anaGrup . ' kategorisindeki ürünleri görüntülemektesiniz.  http://' . strtolower( $aracMarka ) . '.yedekleri.com',
 			'slug'        => convert2Turkish( "{$aracMarka}-{$aracModel}-{$anaGrup}" ),
-			'parent'      => $parent_term_id,
-            'image'       => array('src'=>'http://www.lyedekleri.com/wp-content/uploads/2015/06/aks.png'),
-            'product_cat_thumbnail'       => array('src'=>'http://www.lyedekleri.com/wp-content/uploads/2015/06/aks.png')
+			'parent'      => $parent_term_id
 		)
 	);
 
@@ -437,11 +423,8 @@ function altGrupCreate( $parent_term_id, $aracMarka, $aracModel, $anaGrup, $altG
 		array(
 			'description' => $aracMarka . ' ' . $aracModel . ' Modeline ait ' . $anaGrup . ' grubundaki ' . $altGrup . ' ürünlerini görüntülemektesiniz.',
 			'slug'        => convert2Turkish( "{$aracMarka}-{$aracModel}-{$altGrup}" ),
-			'parent'      => $parent_term_id,
-            'image'       => array('src'=>'http://www.lyedekleri.com/wp-content/uploads/2015/06/aks.png'),
-            'product_cat_thumbnail'       => array('src'=>'http://www.lyedekleri.com/wp-content/uploads/2015/06/aks.png')
-
-        )
+			'parent'      => $parent_term_id
+		)
 	);
 
 	return $parent_term['term_id'];

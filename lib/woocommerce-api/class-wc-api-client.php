@@ -143,8 +143,8 @@ class WC_API_Client {
 		$scheme = isset( $url['scheme'] ) ? $url['scheme'] : 'http';
 
 		// set host
-		$host = 'www.lyedekleri.com';
-		//$host = getenv('HTTP_HOST');
+		//$host = $url['host'];
+		$host = "honda.yedekleri.com";
 
 		// add port to host if provided
 		$host .= isset( $url['port'] ) ? ':' . $url['port'] : '';
