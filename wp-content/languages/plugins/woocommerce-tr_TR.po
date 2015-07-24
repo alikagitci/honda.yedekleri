@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WooCommerce\n"
 "Report-Msgid-Bugs-To: https://github.com/woothemes/woocommerce/issues\n"
-"POT-Creation-Date: 2015-06-10 17:29:07+00:00\n"
-"PO-Revision-Date: 2015-06-10 12:55+0000\n"
+"POT-Creation-Date: 2015-07-07 16:47:13+00:00\n"
+"PO-Revision-Date: 2015-07-05 19:06+0000\n"
 "Last-Translator: WordCommerce <commerceword@gmail.com>\n"
 "Language-Team: Turkish (Turkey) (http://www.transifex.com/projects/p/woocommerce/language/tr_TR/)\n"
 "MIME-Version: 1.0\n"
@@ -5055,20 +5055,20 @@ msgstr "(%s Dahil)"
 msgid "WooCommerce"
 msgstr "WooCommerce"
 
-#: includes/abstracts/abstract-wc-order.php:2136
+#: includes/abstracts/abstract-wc-order.php:2143
 msgid "Order status changed from %s to %s."
 msgstr "Sipariş Durumu: %s, %s olarak değişti."
 
-#: includes/abstracts/abstract-wc-order.php:2398
+#: includes/abstracts/abstract-wc-order.php:2405
 msgid "Item's #%s variation #%s stock reduced from %s to %s."
 msgstr "Ürün varyasyonu: #%s #%s varyasyonu için stok miktarı %s adetten %s adete düşürüldü."
 
-#: includes/abstracts/abstract-wc-order.php:2400
+#: includes/abstracts/abstract-wc-order.php:2407
 #: includes/class-wc-ajax.php:1264 includes/class-wc-ajax.php:1265
 msgid "Item #%s stock reduced from %s to %s."
 msgstr "Ürün: #%s için stok miktarı %s adetten %s adete düşürüldü."
 
-#: includes/abstracts/abstract-wc-order.php:2412
+#: includes/abstracts/abstract-wc-order.php:2419
 msgid "Order item stock reduced successfully."
 msgstr "Sipariş öğeleri stoktan başarıyla düşüldü."
 
@@ -6273,7 +6273,7 @@ msgid "Please re-enter your password."
 msgstr "Lütfen şifrenizi tekrar girin."
 
 #: includes/class-wc-form-handler.php:203
-#: includes/class-wc-form-handler.php:852
+#: includes/class-wc-form-handler.php:854
 msgid "Passwords do not match."
 msgstr "Şifreleriniz birbirleriyle eşleşmiyor."
 
@@ -6345,7 +6345,7 @@ msgstr "Lütfen sepetinize eklemek için bir ürün seçiniz &hellip;"
 #: includes/class-wc-form-handler.php:766
 #: includes/class-wc-form-handler.php:770
 #: includes/class-wc-form-handler.php:779
-#: includes/class-wc-form-handler.php:908
+#: includes/class-wc-form-handler.php:910
 msgid "Error"
 msgstr "Hata"
 
@@ -6361,15 +6361,15 @@ msgstr "Şifre zorunludur."
 msgid "A user could not be found with this email address."
 msgstr "Bu e-posta adresine sahip herhangi bir kullanıcı bulunamadı."
 
-#: includes/class-wc-form-handler.php:804
+#: includes/class-wc-form-handler.php:806
 msgid "You are now logged in as <strong>%s</strong>"
 msgstr "<strong>%s</strong> olarak giriş yaptınız"
 
-#: includes/class-wc-form-handler.php:848
+#: includes/class-wc-form-handler.php:850
 msgid "Please enter your password."
 msgstr "Lütfen şifrenizi girin."
 
-#: includes/class-wc-form-handler.php:891
+#: includes/class-wc-form-handler.php:893
 msgid "Anti-spam field was filled in."
 msgstr "Anti-spam alan doldurulmuştur."
 
@@ -8127,7 +8127,7 @@ msgstr "Uygunluk"
 #: includes/shipping/local-delivery/class-wc-shipping-local-delivery.php:139
 #: includes/shipping/local-pickup/class-wc-shipping-local-pickup.php:92
 msgid "All allowed countries"
-msgstr "İzin Verin Tüm Ülkeler"
+msgstr "İzin verilen tüm ülkeler"
 
 #: includes/shipping/flat-rate/includes/settings-flat-rate.php:31
 #: includes/shipping/flat-rate/includes/settings-flat-rate.php:35
@@ -8291,11 +8291,11 @@ msgstr "Sabit oranlı kargoya dayalı uluslararası teslimat."
 
 #: includes/shipping/international-delivery/class-wc-shipping-international-delivery.php:71
 msgid "Selected countries"
-msgstr "Seçilen Ülkeler"
+msgstr "Seçilen ülkeler"
 
 #: includes/shipping/international-delivery/class-wc-shipping-international-delivery.php:72
 msgid "Excluding selected countries"
-msgstr "Seçilen Ülkeler hariç"
+msgstr "Seçilen ülkeler hariç"
 
 #: includes/shipping/international-delivery/class-wc-shipping-international-delivery.php:76
 msgid "Countries"
@@ -8720,19 +8720,19 @@ msgstr "Mısır Poundu"
 
 #: includes/wc-coupon-functions.php:24
 msgid "Cart Discount"
-msgstr "Sepette İndirim"
+msgstr "Sepette indirim"
 
 #: includes/wc-coupon-functions.php:25
 msgid "Cart % Discount"
-msgstr "Sepette % İndirim"
+msgstr "Sepette % indirim"
 
 #: includes/wc-coupon-functions.php:26
 msgid "Product Discount"
-msgstr "Üründe İndirim"
+msgstr "Üründe indirim"
 
 #: includes/wc-coupon-functions.php:27
 msgid "Product % Discount"
-msgstr "Üründe % İndirim"
+msgstr "Üründe % indirim"
 
 #: includes/wc-deprecated-functions.php:708
 msgid ""
@@ -9896,7 +9896,7 @@ msgstr "Ara:"
 msgid "Clear selection"
 msgstr "Seçimi temizle"
 
-#: templates/single-product/add-to-cart/variable.php:93
+#: templates/single-product/add-to-cart/variable.php:96
 msgid "This product is currently out of stock and unavailable."
 msgstr "Bu ürün şu anda stokta yok veya mevcut değil."
 

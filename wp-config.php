@@ -18,9 +18,11 @@
 // ** MySQL ayarları - Bu bilgileri sunucunuzdan alabilirsiniz ** //
 /** WordPress için kullanılacak veritabanının adı */
 define('WP_CACHE', true); //Added by WP-Cache Manager
+
 define( 'WP_MEMORY_LIMIT', '256M' );
 define('FS_METHOD', 'direct');
 define('EMPTY_TRASH_DAYS', 0 );
+
 define('DB_NAME', 'yedekleri');
 
 define( 'WPCACHEHOME', '/var/www/honda.yedekleri/wp-content/plugins/wp-super-cache/' ); //Added by WP-Cache Manager
@@ -72,10 +74,10 @@ $table_prefix  = 'wp_';
  * Geliştiriciler için: WordPress hata ayıklama modu.
  *
  * Bu değeri "true" yaparak geliştirme sırasında hataların ekrana basılmasını sağlayabilirsiniz.
- * Tema ve eklenti geliştiricilerinin geliştirme aşamasında WP_DEBUG
+ * Tema ve eklenti geliştiricilerinin geliştirme aşamasında WP_ 
  * kullanmalarını önemle tavsiye ederiz.
  */
-//define('WP_DEBUG', false);
+//define('WP_DEBUG', true);
 
 /* Hepsi bu kadar. Mutlu bloglamalar! */
 
@@ -85,6 +87,6 @@ if ( !defined('ABSPATH') )
 //define( 'UPLOADS', 'productImages/'.'files' );
 define('PROJECT_VERSION', '0.28');
 
-apc_clear_cache('opcode');
+//apc_clear_cache('opcode');
 /** WordPress değişkenlerini ve yollarını kurar. */
 require_once(ABSPATH . 'wp-settings.php');

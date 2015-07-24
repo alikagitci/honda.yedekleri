@@ -58,11 +58,11 @@ msgstr "Akismet bu yorumu tekrar kontrol edemiyor (cevap: %s)."
 msgid "%1$s changed the comment status to %2$s."
 msgstr "%1$s bu yorumun durumunu %2$s olarak değiştirdi."
 
-#: views/notice.php:95
+#: views/notice.php:99
 msgid "The connection to akismet.com cannot be established. Please refer to <a href=\"%s\" target=\"_blank\">our guide about firewalls</a> and check your server configuration."
 msgstr "akismet.com bağlantısı kurulamıyor. Lütfen <a href=\"%s\" target=\"_blank\">ateş duvarları ile ilgili rehberimize</a> bakın ve sunucu ayarlarınızı kontrol edin."
 
-#: views/notice.php:94
+#: views/notice.php:98
 msgid "The key you entered could not be verified."
 msgstr "Girdiğiniz anahtar doğrulanamadı."
 
@@ -108,7 +108,7 @@ msgstr "http://akismet.com/"
 msgid "Used by millions, Akismet is quite possibly the best way in the world to <strong>protect your blog from comment and trackback spam</strong>. It keeps your site protected from spam even while you sleep. To get started: 1) Click the \"Activate\" link to the left of this description, 2) <a href=\"http://akismet.com/get/\">Sign up for an Akismet API key</a>, and 3) Go to your Akismet configuration page, and save your API key."
 msgstr "Milyonlar tarafından kullanılan Akismet büyük ihtimalle <strong>blogunuzu istenmeyen yorumlardan ve geri izlemelerden kurtarmanın en iyi yolu.</strong> Siz uyurken bile sitenizi istenmeyen ögelerden korur. Başlamak için: 1) Bu açıklamanın solunda kalan \"Etkinleştir\" tuşuna basın, 2) <a href=\"http://akismet.com/get/\">Bir Akismet API anahtarı</a> edinin ve 3) Akismet ayar sayfasına gidip, API anahtarınızı kaydedin."
 
-#: class.akismet-admin.php:781
+#: class.akismet-admin.php:785
 msgid "Please check your <a href=\"%s\">Akismet configuration</a> and contact your web host if problems persist."
 msgstr "Lütfen <a href=\"%s\">Akismet yapılandırmanızı</a> kontrol edin ve sorunların devam etmesi durumunda web yöneticinizle iletişime geçin."
 
@@ -426,10 +426,10 @@ msgstr "Akismet otomatik tekrar sırasında bu yorumu temizledi."
 msgid "View comment history"
 msgstr "Yorum geçmişini göster"
 
-#. #-#-#-#-#  akismet.pot (Akismet 3.1.2a1)  #-#-#-#-#
+#. #-#-#-#-#  akismet.pot (Akismet 3.1.4a1)  #-#-#-#-#
 #. Plugin Name of the plugin/theme
 #: class.akismet-admin.php:76 class.akismet-admin.php:78
-#: class.akismet-admin.php:838 views/config.php:3
+#: class.akismet-admin.php:842 views/config.php:3
 msgid "Akismet"
 msgstr "Akismet"
 
@@ -482,15 +482,15 @@ msgstr "Güncelle"
 msgid "Next Billing Date"
 msgstr "Sonraki  Fatura Tarihi"
 
-#: class.akismet-admin.php:873
+#: class.akismet-admin.php:885
 msgid "Since you joined us, Akismet has saved you %d hours!"
 msgstr "Bize katıldığınızdan beri, Akismet %d saatinizi kurtardı!"
 
-#: class.akismet-admin.php:875
+#: class.akismet-admin.php:887
 msgid "Since you joined us, Akismet has saved you %d minutes!"
 msgstr "Bize katıldığınızdan beri, Akismet %d dakikanızı kurtardı!"
 
-#: class.akismet.php:1020
+#: class.akismet.php:1029
 msgid "Akismet %s requires WordPress %s or higher."
 msgstr "Akismet %s, WordPress %s veya daha yüksek sürüm gerektirir."
 
@@ -550,11 +550,11 @@ msgid_plural "<a href=\"%1$s\">Akismet</a> has protected your site from <a href=
 msgstr[0] "<a href=\"%1$s\">Akismet</a> sitenizi <a href=\"%2$s\">%3$s istenmeyen yorumdan</a> korudu."
 msgstr[1] "<a href=\"%1$s\">Akismet</a> sitenizi <a href=\"%2$s\">%3$s istenmeyen yorumdan</a> korudu."
 
-#: class.akismet-admin.php:871
+#: class.akismet-admin.php:883
 msgid "Since you joined us, Akismet has saved you %s days!"
 msgstr "Bize katıldığınızdan beri, Akismet %s gününüzü kurtardı!"
 
-#: class.akismet-admin.php:868
+#: class.akismet-admin.php:880
 msgid "Cleaning up spam takes time."
 msgstr "İstenmeyen yorumları temizlemek zaman alır."
 
@@ -642,7 +642,7 @@ msgstr "Bu adresi kaldır"
 msgid "URL removed"
 msgstr "Adres kaldırıldı"
 
-#: class.akismet.php:1020 views/notice.php:27
+#: class.akismet.php:1029 views/notice.php:27
 msgid "Please <a href=\"%1$s\">upgrade WordPress</a> to a current version, or <a href=\"%2$s\">downgrade to version 2.4 of the Akismet plugin</a>."
 msgstr "Lütfen WordPress&#8217;i <a href=\"%1$s\">güncel sürüme yükseltin</a>, veya Akismet eklentisini <a href=\"%2$s\">2.4 sürümüne indirin</a>."
 

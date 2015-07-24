@@ -10,9 +10,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WooCommerce\n"
 "Report-Msgid-Bugs-To: https://github.com/woothemes/woocommerce/issues\n"
-"POT-Creation-Date: 2015-06-10 17:29:07+00:00\n"
-"PO-Revision-Date: 2015-06-10 17:19+0000\n"
-"Last-Translator: Claudio Sanches <contato@claudiosmweb.com>\n"
+"POT-Creation-Date: 2015-07-07 16:47:14+00:00\n"
+"PO-Revision-Date: 2015-07-05 19:07+0000\n"
+"Last-Translator: WordCommerce <commerceword@gmail.com>\n"
 "Language-Team: Turkish (Turkey) (http://www.transifex.com/projects/p/woocommerce/language/tr_TR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -538,7 +538,7 @@ msgid ""
 "After %sreading the documentation%s, for further assistance you can use the "
 "%sWordPress.org support forum%s. For help with premium add-ons from "
 "WooThemes, or if you are a WooThemes customer, you can %suse our helpdesk%s."
-msgstr ""
+msgstr "%sDokümantasyonu okuduktan sonra%s daha fazla yardım için %sWordPress.org destek forumunu kullanabilirsiniz%s. WooThemes müşterisiyseniz veya WooThemes ücretli eklentileri konusunda yardıma ihtiyaç duyuyorsanız %sdestek masamızı%s kullanabilirsiniz."
 
 #: includes/admin/class-wc-admin-help.php:57
 msgid ""
@@ -556,7 +556,7 @@ msgstr "Sistem Durumu"
 
 #: includes/admin/class-wc-admin-help.php:59
 msgid "WordPress.org Support Forum"
-msgstr ""
+msgstr "WordPress.org Destek Forumu"
 
 #: includes/admin/class-wc-admin-help.php:59
 msgid "WooThemes Customer Support"
@@ -1279,7 +1279,7 @@ msgstr "Kupon Kodu"
 
 #: includes/admin/class-wc-admin-post-types.php:1919
 msgid "Description (optional)"
-msgstr "Açıklama (İsteğe bağlı)"
+msgstr "Açıklama (isteğe bağlı)"
 
 #: includes/admin/class-wc-admin-post-types.php:1936
 msgid "Insert into %s"
@@ -2155,7 +2155,7 @@ msgstr "Kullanım Sınırları"
 
 #: includes/admin/meta-boxes/class-wc-meta-box-coupon-data.php:65
 msgid "Discount type"
-msgstr "İndirim türü"
+msgstr "İndirim Türü"
 
 #: includes/admin/meta-boxes/class-wc-meta-box-coupon-data.php:68
 msgid "Value of the coupon."
@@ -2163,7 +2163,7 @@ msgstr "Kupon değeri"
 
 #: includes/admin/meta-boxes/class-wc-meta-box-coupon-data.php:71
 msgid "Allow free shipping"
-msgstr "Ücretsiz kargoya izin ver"
+msgstr "Ücretsiz Kargoya İzin Ver"
 
 #: includes/admin/meta-boxes/class-wc-meta-box-coupon-data.php:71
 msgid ""
@@ -2174,11 +2174,11 @@ msgstr "Kupon için ücretsiz kargo özelliği geçerli olacaksa bu kutucuğu i�
 
 #: includes/admin/meta-boxes/class-wc-meta-box-coupon-data.php:74
 msgid "Coupon expiry date"
-msgstr "Kupon son kullanım tarihi"
+msgstr "Kupon Son Kullanım Tarihi"
 
 #: includes/admin/meta-boxes/class-wc-meta-box-coupon-data.php:84
 msgid "Minimum spend"
-msgstr "Asgari harcama"
+msgstr "Asgari Harcama"
 
 #: includes/admin/meta-boxes/class-wc-meta-box-coupon-data.php:84
 msgid "No minimum"
@@ -2191,7 +2191,7 @@ msgstr "Bu alan, kupon kullanmak için gerekli olan asgari ara toplamı ayarlama
 
 #: includes/admin/meta-boxes/class-wc-meta-box-coupon-data.php:87
 msgid "Maximum spend"
-msgstr "Azami harcama"
+msgstr "Azami Harcama"
 
 #: includes/admin/meta-boxes/class-wc-meta-box-coupon-data.php:87
 msgid "No maximum"
@@ -2205,7 +2205,7 @@ msgstr "Bu alan, kupon kullanımında izin verilen azami ara-toplamı ayarlaman�
 
 #: includes/admin/meta-boxes/class-wc-meta-box-coupon-data.php:90
 msgid "Individual use only"
-msgstr "Sadece tekil kullanım"
+msgstr "Sadece Tekil Kullanım"
 
 #: includes/admin/meta-boxes/class-wc-meta-box-coupon-data.php:90
 msgid ""
@@ -2215,7 +2215,7 @@ msgstr "Eğer kupon, diğer kuponlarla birlikte kulanılabilir olmayacaksa bu ku
 
 #: includes/admin/meta-boxes/class-wc-meta-box-coupon-data.php:93
 msgid "Exclude sale items"
-msgstr "İndirim ürünleri hariç"
+msgstr "İndirim Ürünleri Hariç"
 
 #: includes/admin/meta-boxes/class-wc-meta-box-coupon-data.php:93
 msgid ""
@@ -2241,7 +2241,7 @@ msgstr "Bu kuponu kullanmak için sepette bulunması gereken ürünler veya indi
 
 #: includes/admin/meta-boxes/class-wc-meta-box-coupon-data.php:117
 msgid "Exclude products"
-msgstr "Ürünler hariç"
+msgstr "Ürünler Hariç"
 
 #: includes/admin/meta-boxes/class-wc-meta-box-coupon-data.php:130
 msgid ""
@@ -2251,7 +2251,7 @@ msgstr "Bu kuponu kullanmak için sepette bulunmaması gereken ürünler veya in
 
 #: includes/admin/meta-boxes/class-wc-meta-box-coupon-data.php:137
 msgid "Product categories"
-msgstr "Ürün kategorileri"
+msgstr "Ürün Kategorileri"
 
 #: includes/admin/meta-boxes/class-wc-meta-box-coupon-data.php:138
 msgid "Any category"
@@ -2265,7 +2265,7 @@ msgstr "Kuponun geçerli kalması için bu kategorideki bir ürün olmalı veya 
 
 #: includes/admin/meta-boxes/class-wc-meta-box-coupon-data.php:152
 msgid "Exclude categories"
-msgstr "Kategoriler hariç"
+msgstr "Kategoriler Hariç"
 
 #: includes/admin/meta-boxes/class-wc-meta-box-coupon-data.php:153
 msgid "No categories"
@@ -2279,7 +2279,7 @@ msgstr "Kuponun geçerli kalması için bu kategorideki bir ürün olmamalı vey
 
 #: includes/admin/meta-boxes/class-wc-meta-box-coupon-data.php:168
 msgid "Email restrictions"
-msgstr "E-posta kısıtlamaları"
+msgstr "E-posta Kısıtlamaları"
 
 #: includes/admin/meta-boxes/class-wc-meta-box-coupon-data.php:168
 msgid "No restrictions"
@@ -2293,7 +2293,7 @@ msgstr "Bir sipariş verdilği zaman müşteri fatura e-posta adresiyle karşıl
 
 #: includes/admin/meta-boxes/class-wc-meta-box-coupon-data.php:182
 msgid "Usage limit per coupon"
-msgstr "Her bir kupon için kullanım sınırı"
+msgstr "Kupon Başına Kullanım Sınırı"
 
 #: includes/admin/meta-boxes/class-wc-meta-box-coupon-data.php:182
 msgid "How many times this coupon can be used before it is void."
@@ -2311,7 +2311,7 @@ msgstr "Ürün indirimleri kullanıldığı zaman bu kuponun uygulanabileceği m
 
 #: includes/admin/meta-boxes/class-wc-meta-box-coupon-data.php:194
 msgid "Usage limit per user"
-msgstr "Her bir kullanıcı için kullanım sınırı"
+msgstr "Kullanıcı Başına Kullanım Sınırı"
 
 #: includes/admin/meta-boxes/class-wc-meta-box-coupon-data.php:194
 msgid ""
@@ -3037,23 +3037,23 @@ msgid "Product SKU must be unique."
 msgstr "Ürün stok kodu benzersiz olmalıdır."
 
 #: includes/admin/meta-boxes/class-wc-meta-box-product-data.php:1259
-#: includes/admin/meta-boxes/class-wc-meta-box-product-data.php:1531
+#: includes/admin/meta-boxes/class-wc-meta-box-product-data.php:1535
 msgid ""
 "The downloadable file %s cannot be used as it does not have an allowed file "
 "type. Allowed types include: %s"
 msgstr "%s indirilebilir dosyası izin verilmeyen bir dosya türüne sahip olduğu için kullanılamaz. İzin verilen türler şunlardır: %s"
 
-#: includes/admin/meta-boxes/class-wc-meta-box-product-data.php:1266
-#: includes/admin/meta-boxes/class-wc-meta-box-product-data.php:1538
+#: includes/admin/meta-boxes/class-wc-meta-box-product-data.php:1269
+#: includes/admin/meta-boxes/class-wc-meta-box-product-data.php:1542
 msgid ""
 "The downloadable file %s cannot be used as it does not exist on the server."
 msgstr "%s indirilebilir dosyası sunucuda bulunmadığı için kullanılamaz."
 
-#: includes/admin/meta-boxes/class-wc-meta-box-product-data.php:1367
+#: includes/admin/meta-boxes/class-wc-meta-box-product-data.php:1371
 msgid "Variation #%s of %s"
 msgstr "Varyasyon #%s of %s"
 
-#: includes/admin/meta-boxes/class-wc-meta-box-product-data.php:1411
+#: includes/admin/meta-boxes/class-wc-meta-box-product-data.php:1415
 msgid "Variation SKU must be unique."
 msgstr "Varyasyon stok kodu benzersiz olmalıdır."
 
@@ -3930,7 +3930,7 @@ msgstr "Uç noktalar, hesabım sayfalarında belirli eylemleri gerçekleştirmek
 
 #: includes/admin/settings/class-wc-settings-accounts.php:61
 msgid "View Order"
-msgstr "Sipariş Görüntüle"
+msgstr "Siparişi Görüntüle"
 
 #: includes/admin/settings/class-wc-settings-accounts.php:62
 msgid "Endpoint for the My Account &rarr; View Order page"
@@ -3946,7 +3946,7 @@ msgstr "Hesabım için Uç Nokta &rarr; Hesabı Düzenle Sayfası"
 
 #: includes/admin/settings/class-wc-settings-accounts.php:79
 msgid "Edit Address"
-msgstr "Adres Düzenle"
+msgstr "Adresi Düzenle"
 
 #: includes/admin/settings/class-wc-settings-accounts.php:80
 msgid "Endpoint for the My Account &rarr; Edit Address page"
@@ -4135,29 +4135,29 @@ msgstr "E-Postalar"
 msgid "Email Options"
 msgstr "E-Posta Seçenekleri"
 
-#: includes/admin/settings/class-wc-settings-emails.php:70
+#: includes/admin/settings/class-wc-settings-emails.php:69
 msgid "Email Sender Options"
 msgstr "E-Posta Gönderici Seçenekleri"
 
-#: includes/admin/settings/class-wc-settings-emails.php:70
+#: includes/admin/settings/class-wc-settings-emails.php:69
 msgid ""
 "The following options affect the sender (email address and name) used in "
 "WooCommerce emails."
 msgstr "Aşağıdaki seçenekler WooCommerce e-postalarındaki göndericiyi (e-posta adresi ve isim) etkiler."
 
-#: includes/admin/settings/class-wc-settings-emails.php:73
+#: includes/admin/settings/class-wc-settings-emails.php:72
 msgid "\"From\" Name"
 msgstr "\"Kimden\" İsim"
 
-#: includes/admin/settings/class-wc-settings-emails.php:83
+#: includes/admin/settings/class-wc-settings-emails.php:82
 msgid "\"From\" Email Address"
 msgstr "\"Kimden\" E-Posta Adresi"
 
-#: includes/admin/settings/class-wc-settings-emails.php:97
+#: includes/admin/settings/class-wc-settings-emails.php:96
 msgid "Email Template"
 msgstr "E-Posta Teması"
 
-#: includes/admin/settings/class-wc-settings-emails.php:97
+#: includes/admin/settings/class-wc-settings-emails.php:96
 msgid ""
 "This section lets you customise the WooCommerce emails. <a href=\"%s\" "
 "target=\"_blank\">Click here to preview your email template</a>. For more "
@@ -4165,61 +4165,61 @@ msgid ""
 "<code>yourtheme/woocommerce/emails/</code>."
 msgstr "Bu bölüm, WooCommerce e-postalarını kişiselleştirmeniz için olanak sağlar. <a href=\"%s\" target=\"_blank\">E-Posta temasını önizlemek için buraya tıklayabilir</a> veya daha gelişmiş kontrol için <code>woocommerce/templates/emails/</code> yolundaki şablonları kopyalayıp <code>temanız/woocommerce/emails/</code> yoluna yapıştırabilirsiniz."
 
-#: includes/admin/settings/class-wc-settings-emails.php:100
+#: includes/admin/settings/class-wc-settings-emails.php:99
 msgid "Header Image"
 msgstr "Başlık Resmi"
 
-#: includes/admin/settings/class-wc-settings-emails.php:101
+#: includes/admin/settings/class-wc-settings-emails.php:100
 msgid ""
 "Enter a URL to an image you want to show in the email's header. Upload your "
 "image using the <a href=\"%s\">media uploader</a>."
 msgstr "E-Posta başlığında resim göstermek için bir bağlantı adresi girin veya <a href=\"%s\">buraya tıklayarak</a> bir resim yükleyin."
 
-#: includes/admin/settings/class-wc-settings-emails.php:110
+#: includes/admin/settings/class-wc-settings-emails.php:109
 msgid "Email Footer Text"
 msgstr "E-Posta Altbilgi Metni"
 
-#: includes/admin/settings/class-wc-settings-emails.php:111
+#: includes/admin/settings/class-wc-settings-emails.php:110
 msgid "The text to appear in the footer of WooCommerce emails."
 msgstr "Metin, Woocommerce e-postalarının altbilgi kısmında görünür."
 
-#: includes/admin/settings/class-wc-settings-emails.php:115
+#: includes/admin/settings/class-wc-settings-emails.php:114
 msgid "Powered by WooCommerce"
 msgstr "WooCommerce tarafından desteklenmektedir."
 
-#: includes/admin/settings/class-wc-settings-emails.php:120
+#: includes/admin/settings/class-wc-settings-emails.php:119
 msgid "Base Colour"
 msgstr "Temel Renk"
 
-#: includes/admin/settings/class-wc-settings-emails.php:121
+#: includes/admin/settings/class-wc-settings-emails.php:120
 msgid ""
 "The base colour for WooCommerce email templates. Default "
 "<code>#557da1</code>."
 msgstr "Woocommerce e-posta temaları için temel renk. Varsayılan <code>#557da1</code>"
 
-#: includes/admin/settings/class-wc-settings-emails.php:130
+#: includes/admin/settings/class-wc-settings-emails.php:129
 msgid "Background Colour"
 msgstr "Arkaplan Rengi"
 
-#: includes/admin/settings/class-wc-settings-emails.php:131
+#: includes/admin/settings/class-wc-settings-emails.php:130
 msgid ""
 "The background colour for WooCommerce email templates. Default "
 "<code>#f5f5f5</code>."
 msgstr "Woocommerce e-posta temaları için arkaplan rengi. Varsayılan <code>#f5f5f5</code>."
 
-#: includes/admin/settings/class-wc-settings-emails.php:140
+#: includes/admin/settings/class-wc-settings-emails.php:139
 msgid "Email Body Background Colour"
 msgstr "E-Posta Gövdesi Arkaplan Rengi"
 
-#: includes/admin/settings/class-wc-settings-emails.php:141
+#: includes/admin/settings/class-wc-settings-emails.php:140
 msgid "The main body background colour. Default <code>#fdfdfd</code>."
 msgstr "Ana gövde arkaplan rengi. Varsayılan <code>#fdfdfd</code>."
 
-#: includes/admin/settings/class-wc-settings-emails.php:150
+#: includes/admin/settings/class-wc-settings-emails.php:149
 msgid "Email Body Text Colour"
 msgstr "E-Posta Gövdesi Metin Rengi"
 
-#: includes/admin/settings/class-wc-settings-emails.php:151
+#: includes/admin/settings/class-wc-settings-emails.php:150
 msgid "The main body text colour. Default <code>#505050</code>."
 msgstr "Ana gövde metin rengi. Varsayılan <code>#505050</code>."
 
@@ -4256,7 +4256,7 @@ msgstr "Sadece belirli ülkelere satış yap"
 #: includes/admin/settings/class-wc-settings-general.php:78
 #: includes/admin/settings/class-wc-settings-shipping.php:146
 msgid "Specific Countries"
-msgstr "Sadece Belirli Ülkeler"
+msgstr "Belirli ülkeler"
 
 #: includes/admin/settings/class-wc-settings-general.php:87
 msgid "Default Customer Address"
@@ -6157,7 +6157,7 @@ msgstr "<strong>WooCommerce Veri Güncellemesi Gerekiyor</strong> &#8211; Yükle
 
 #: includes/admin/views/html-notice-update.php:14
 msgid "Run the updater"
-msgstr "Güncellemeyi çalıştırın"
+msgstr "Güncelleyiciyi Çalıştır"
 
 #: includes/admin/views/html-notice-update.php:18
 msgid ""

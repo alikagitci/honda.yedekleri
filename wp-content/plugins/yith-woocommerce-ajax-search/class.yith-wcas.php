@@ -122,7 +122,7 @@ if ( !class_exists( 'YITH_WCAS' ) ) {
         public function ajax_search_products() {
             global $woocommerce;
 
-            $search_keyword = esc_attr( $_REQUEST['query'] );
+            $search_keyword =  $_REQUEST['query'];
 
             $ordering_args = $woocommerce->query->get_catalog_ordering_args( 'title', 'asc' );
             $suggestions   = array();
@@ -135,6 +135,7 @@ if ( !class_exists( 'YITH_WCAS' ) ) {
                 'orderby'             => $ordering_args['orderby'],
                 'order'               => $ordering_args['order'],
                 'posts_per_page'      => apply_filters( 'yith_wcas_ajax_search_products_posts_per_page', get_option( 'yith_wcas_posts_per_page' ) ),
+                'suppress_filters'    => false,
                 'meta_query'          => array(
                     array(
                         'key'     => '_visibility',
@@ -153,6 +154,7 @@ if ( !class_exists( 'YITH_WCAS' ) ) {
                         'terms'    => $_REQUEST['product_cat']
                     ) );
             }
+
 
             $products = get_posts( $args );
 
